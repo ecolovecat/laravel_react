@@ -37,8 +37,11 @@ class Modal extends Component {
                 salary: this.state.salary
             }).then(() => {
                 setTimeout(() => {
+                    alert('Updated succesful')
                     location.reload()
                 }, 2500)
+            }).catch((e) => {
+                alert('Something went wrong', e)
             })
         }
 
@@ -48,8 +51,11 @@ class Modal extends Component {
         event.preventDefault();
         axios.delete('/delete/employee/data/' + this.props.employeeData.id).then(() => {
             setTimeout(() => {
+                alert('Deleted succesful')
                 location.reload()
             }, 2500)
+        }).catch((e) => {
+            alert('Something went wrong', e)
         })
     }
 
