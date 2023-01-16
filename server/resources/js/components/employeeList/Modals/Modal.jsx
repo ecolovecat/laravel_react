@@ -44,9 +44,9 @@ class Modal extends Component {
 
     }
 
-    deleteEmployee = (eId) => {
-        console.log(eId)
-        axios.delete('/delete/employee/data/' + eId).then(() => {
+    deleteEmployee = () => {
+        event.preventDefault();
+        axios.delete('/delete/employee/data/' + this.props.employeeData.id).then(() => {
             setTimeout(() => {
                 location.reload()
             }, 2500)
@@ -105,7 +105,7 @@ class Modal extends Component {
                                 <div className="modal-edit-content">
                                     <div>Are you sure to delete this</div>
                                     <div className="modal-button d-flex justify-content-between">
-                                        <button type="button" className="btn btn-danger" onClick={this.deleteEmployee(this.props.employeeData.id)}>Yes</button>
+                                        <button type="button" className="btn btn-danger" onClick={this.deleteEmployee}>Yes</button>
                                         <button type="button" className="btn btn-secondary" onClick={handleClose}>No</button>
                                     </div>
                                 </div>
