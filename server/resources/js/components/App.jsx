@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Table from "./employeeList/Table";
+import EmployeeTable from "./employeeList/EmployeeTable";
 
 
 
 function App() {
     return (
         <div className="container">
-            <Table/>
+            <EmployeeTable/>
         </div>
     );
 }
